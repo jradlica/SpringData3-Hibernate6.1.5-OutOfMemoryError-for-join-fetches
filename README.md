@@ -7,7 +7,7 @@ When the pageable query contains collection join fetches the all found entities 
 1. Start app with option: `-Xmx 256M`
 2. Create 300 test entities in several requests `for i in {1..5}; do curl 'localhost:8080/create-new-entity?n=50'; done` 
 3. Try to fetch the page 1 with size 5 using specification with join fetch `curl 'localhost:8080/list-entities?joinType=fetch&page=1&size=5'` => OutOfMemoryWillBeThrown
-  * In the `QuerySqmImpl.java` in line 546:
+  * In the `org.hibernate.query.sqm.internal.QuerySqmImpl.java` in line 546:
       ```
       final List<R> list = resolveSelectQueryPlan().performList( executionContextToUse ); 
       ```
