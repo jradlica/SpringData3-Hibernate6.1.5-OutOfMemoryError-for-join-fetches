@@ -40,7 +40,6 @@ class TestController {
 
     @GetMapping("/create-new-entity")
     public void createNewEntity(@RequestParam(value = "n", required = false) Long numberOfEntities) {
-
         if (nonNull(numberOfEntities)) {
             for (int i = 0; i < numberOfEntities; i++) {
                 log.info("Saving : {}/{}", i, numberOfEntities);
@@ -49,6 +48,7 @@ class TestController {
         } else {
             testEntityRepo.save(new TestEntity());
         }
+        System.gc();
     }
 
     @GetMapping("/list-entities")
