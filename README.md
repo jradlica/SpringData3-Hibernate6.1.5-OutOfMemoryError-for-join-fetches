@@ -11,7 +11,7 @@ When the pageable query contains collection join fetches the all found entities 
       ```
       final List<R> list = resolveSelectQueryPlan().performList( executionContextToUse ); 
       ```
-    all entities are loaded. Not only the entities from the first page.
+    all entities are loaded. Not only the 5 entities on the first page.
 * For the regular joins: `curl 'localhost:8080/list-entities?joinType=regular&page=1&size=5' the problem is not occur.
 
 
